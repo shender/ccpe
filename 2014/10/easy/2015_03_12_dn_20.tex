@@ -1,0 +1,121 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{Городской центр физического образования, 10 класс.}\\
+  \textit{Серия 20, 12 марта 2015.}}
+\end{center}
+
+\begin{center}
+  \Large\textbf{Конденсаторы и тепло. }
+\end{center}
+
+\large
+
+\taskpic{ В схеме перед замыканием ключа конденсатор ёмкостью $C$ не
+  был заряжен. Ключ замыкают на некоторое время, в течение которого
+  конденсатор зарядился до напряжения $U$. Определите, какое
+  количество теплоты $Q_2$ выделится за это время на резисторе
+  сопротивлением $R_2$. ЭДС источника тока равна $\mathcal{E}$, его
+  внутренним сопротивлением пренебречь. }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (2.5,0) {};
+    \draw[thick] (1) --++(up:0.5cm) to[resistor={info={$R_1$}}]  ++(right:2.5cm) --
+    (2); 
+    \draw[thick] (1) --++(down:0.5cm) to[resistor={info'={$R_2$}}]
+    ++(right:2.5cm) -- (2);
+    \draw[thick] (2) --++(right:0.5cm) to[make contact] ++(down:1.5cm)
+    to[capacitor={info={$C$}}] ++(left:3.5cm);
+    \draw[thick] (1) --++(left:0.5cm) to[battery] ++(down:1.5cm); 
+  \end{tikzpicture}
+}
+
+\taskpic[4.5cm]{ Сферический конденсатор с радиусами обкладок $R_1=R$ и
+  $R_2=3R$ подсоединён к источнику тока, который поддерживает на
+  обкладках постоянное напряжение $U$. Пространство между обкладками
+  заполнено двумя слоями различных веществ с удельными сопротивлениями
+  $\rho_1=\rho$ и $\rho_2=2\rho$ и диэлектрическими проницаемостями
+  $\eps_1=\eps_2=1$. Радиус сферической границы между слоями
+  $R_2=2R$. Удельная проводимость слоев между обкладками конденсатора
+  намного меньше удельной проводимости материала обкладок. Найдите
+  заряд на границе между слоями различных веществ. Найдите силу тока,
+  протекающего через конденсатор. }
+{
+  \begin{tikzpicture}
+    \def\r{0.7cm}
+    \draw[very thick] (0,0) circle (\r);
+    \draw[very thick] (0,0) circle (2*\r); 
+    \draw[very thick] (0,0) circle (3*\r);
+    \draw[thick,-o] (0,0) ++(260:3*\r) -- ++(down:0.5cm) node[left]
+    {$-$}; 
+    \draw[draw=white,double=black,double distance=2*\pgflinewidth,ultra
+    thick] (0,0) ++(280:\r) -- ++(down:1.87cm) node[right]
+    {$+$};
+    \draw[black,fill=white,thick] (0.13,-2.46) circle (0.09cm); 
+    \draw (-0.1,-2.8) node {$U$};
+    \draw (0,0) ++(180:1.5*\r) node {$\rho_1$};
+    \draw (0,0) ++(180:2.5*\r) node {$\rho_2$};
+    \draw[thick,->] (0,0) -- ++(135:2*\r) node[above=0.15cm,midway]
+    {$R_2$}; 
+    \draw[thick,->] (0,0) -- ++(90:3*\r) node[right,near end] {$R_3$};
+    \draw[thick,->] (0,0) -- ++(0:\r) node[below,near start] {$R_1$};
+  \end{tikzpicture}
+}
+% ru-2001-10
+
+\taskpic[5cm]{ Найти ёмкость бесконечной цепи, которая образована
+  повторением одного и того же звена из двух одинаковых конденсаторов,
+  каждый ёмкостью $C$. }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (11) at (1,0) {};
+    \node[contact] (12) at (2,0) {}; 
+    \node[contact] (13) at (3,0) {}; 
+    \node[contact] (14) at (4,0) {};
+    \node[contact] (21) at (1,-1) {};
+    \node[contact] (22) at (2,-1) {}; 
+    \node[contact] (23) at (3,-1) {}; 
+    \node[contact] (24) at (4,-1) {};
+    \draw (11) to[capacitor] (12) to[capacitor] (13) to[capacitor]
+    (14); 
+    \draw (12) to[capacitor] (22);
+    \draw (13) to[capacitor] (23); 
+    \draw (14) to[capacitor] (24);
+    \draw (21) to (24);
+    \draw[thick,dashed] (24) -- ++(right:1cm);
+    \draw[thick,dashed] (14) -- ++(right:1cm); 
+  \end{tikzpicture}
+}
+
+\taskpic[5cm]{ Найти ёмкость системы одинаковых конденсаторов, изображенной
+  на рисунке. Ёмкость каждого из конденсаторов равна $C$.}
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (11) at (0,0) {};
+    \node[contact] (21) at (0,-1) {};
+    \node[contact] (22) at (1.5,-1) {}; 
+    \node[contact] (23) at (3,-1) {};
+    \node[contact] (31) at (0,-2) {}; 
+    \node[contact] (32) at (1.5,-2) {};
+    \draw[thick] (11) to[capacitor] ++(right:3cm) -- (23)
+    to[capacitor] (22) to[capacitor] (21) to[capacitor] (31);
+    \draw[thick] (22) to[capacitor] (32);
+    \draw[thick] (23) to[capacitor] ++(down:1cm) -- (31);
+    \draw[thick] (11) -- (21);
+    \draw[thick,-o] (11) -- ++(left:0.5cm);
+    \draw[thick,-o] (31) -- ++(left:0.5cm); 
+  \end{tikzpicture}
+}
+% ru-1963-10
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:

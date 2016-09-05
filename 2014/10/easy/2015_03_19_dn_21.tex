@@ -1,0 +1,77 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{Городской центр физического образования, 10 класс.}\\
+  \textit{Серия 21, 19 марта 2015.}}
+\end{center}
+
+\begin{center}
+  \Large\textbf{ Разрядка конденсаторов. }
+\end{center}
+
+\large
+
+\taskpic{ Конденсатор емкостью $C_1$ разряжается через резистор
+  сопротивлением $R$. Когда сила тока разряда достигает значения
+  $I_0$, ключ размыкают. Найдите количество теплоты $Q$, которое
+  выделится на резисторе, начиная с этого момента времени. }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (0,-2) {};
+    \draw (1) to[make contact] (2);
+    \draw (1) -- ++(right:1.5cm) to[capacitor={info'={$C_2$}}]
+    ++(down:2cm) -- (2) -- ++ (left:1.5cm)  to [resistor={info'={$R$}}] ++(up:2cm)
+    to[capacitor={info={$C_1$}}] (1);    
+  \end{tikzpicture}
+}
+
+\taskpic{ Две батареи с ЭДС $\mathcal{E}_1$ и $\mathcal{E}_{2}$,
+  конденсатор ёмкостью $C$ и резистор сопротивлением $R$ соединены,
+  как показано на рисунке. Определите количество теплоты $Q$,
+  выделяющееся на резисторе после переключения ключа. }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (0,-2) {}; 
+    \draw (0,-0.5) to[battery={info={$\mathcal{E}_2$}}] (2) --
+    ++(right:1.5cm) to[capacitor={info'={$C$}}] ++(up:2cm)
+    to[resistor] (1); 
+    \draw[very thick] (1) -- (left:0.5cm);
+    \draw (-0.5,0) -- ++(left:1cm);
+    \draw (2) -- ++(left:1.5cm) to [battery={info'={$\mathcal{E}_1$}}]
+    ++(up:2cm);
+    \draw[->] (-0.5,0) arc (180:270:0.5cm); 
+  \end{tikzpicture}
+}
+
+\taskpic{ Электрическая цепь состоит из конденсатора ёмкостью $C=125$
+  мкФ, резистора $R$, сопротивление которого неизвестно, источника
+  постоянного тока с ЭДС $\mathcal{E}=70$ В и внутренним
+  сопротивлением $r=R/2$. Вначале конденсатор не заряжен, ток
+  отсутствует. Ключ замыкают и через некоторое время
+  размыкают. Оказалось, что сразу после размыкания ключа сила тока,
+  текущего через конденсатор, в 2 раза больше силы тока, текущего
+  через конденсатор непосредственно перед размыканием ключа. Найдите
+  количество теплоты, которое выделилось в цепи после размыкания
+  ключа. }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (0,-2) {};
+    \draw (1) to[make contact] ++(right:1.5cm) to[battery]
+    ++(down:2cm) -- (2) to[resistor={info'={$R$}}] (1) -- (left:1.5cm)
+    to[capacitor={info={$C$}}] ++(down:2cm) -- (2);  
+  \end{tikzpicture}
+}
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:

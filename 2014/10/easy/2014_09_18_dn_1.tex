@@ -1,0 +1,86 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{Городской центр физического образования, 10 класс.}\\
+  \textit{Серия 1, 18 сентября 2014.}}
+\end{center}
+
+\begin{center}
+  \Large \textbf{Кинематика.}
+\end{center}
+
+\large
+
+\taskpic{ Из миномёта ведут обстрел объекта, расположенного на склоне
+  горы. На каком расстоянии будут падать мины, если начальная скорость
+  их $v_0$, угол у основания $\alpha=30^{\circ}$ и угол, под которым
+  направлен ствол миномёта, равен $\beta=60^{\circ}$ по отношению к
+  горизонту?  }
+{
+  \begin{tikzpicture}
+    \draw[very thick, interface] (3.8,0) -- (0.2,0);
+    \draw[thick] (1,0) -- +(2.5,2.5);
+    \draw[blue] (2,0) node[above=0.3cm,right=-0.1cm] {$\alpha$} arc
+    (0:45:1cm); 
+    \draw[very thick,red,dashed] (1,0) parabola bend (2.5,2.25) (3,2);
+    \draw[double,blue] (1.5,0) node[above=0.3cm,right=-0.1cm]
+    {$\beta$} arc (0:atan(1/0.35):0.5cm);
+    \draw[very thick,->] (1,0) -- (1.35,1) node[left] {$v_0$};
+  \end{tikzpicture}
+}
+
+\taskpic{ Из точки \textbf{A}, находящейся на высоте $H$ над поверхностью
+  земли, свободно падает тело. Одновременно из точки \textbf{В},
+  находящейся на расстоянии $L$ от вертикали, проходящей через точку
+  \textbf{А}, бросают второе тело так, чтобы они столкнулись в
+  воздухе. Под каким углом к горизонту $\alpha$ следует бросить второе
+  тело? Какова должна быть его начальная скорость $v_0$?  }
+{
+  \begin{tikzpicture}
+    \draw[very thick, interface] (3.8,0) -- (0.2,0);
+    \draw[thick] (0.5,0) parabola[bend at end] (3,2);
+    \draw[very thick,->] (0.5,0) node[below] {\textbf{B}} --
+    ++(55:1cm) node[left] {$v_0$}; 
+    \draw[blue] (1,0) node[above=0.25cm,right=-0.1cm] {$\alpha$} arc
+    (0:55:0.5cm);
+    \draw[thick,-o] (3,3) node[left] {\textbf{A}} -- (3,1.9);
+    \draw[thick,blue,<->] (3.5,3) -- (3.5,0) node[midway,right] {$H$};
+    \draw[thick,blue,<->] (0.5,-0.75) -- (3,-0.75) node[midway,below] {$L$};
+  \end{tikzpicture}
+}
+
+\task{ Под каким углом к горизонту нужно бросить камень, чтобы он все
+  время удалялся от точки бросания? }
+
+\task{ Из верхней точки окружности по желобам, направленным вдоль
+  различных хорд этой окружности, одновременно начинают скользить без
+  трения грузы. При движении по какому жёлобу груз достигнет
+  окружности быстрее всего? Ответ поясните. }
+
+\taskpic{ Под каким углом к вертикали должен быть направлен из точки
+  \textbf{А} гладкий жёлоб, чтобы шарик соскользнул по нему на
+  наклонную плоскость за наименьшее время?  }
+{
+  \begin{tikzpicture}
+    \def\a{25}
+    \draw[very thick, interface] (3.8,0) -- (0.2,0);
+    \draw[thick] (0.5,0) -- ++(\a:3.2cm);
+    \draw[very thick] (0.5,0) ++(\a:1.5cm) -- ++(170:1.5cm)
+    node[above] {\textbf{A}};
+    \draw[fill=blue] (0.5,0) ++(\a:1.5cm) ++(165:1.2cm)
+    circle (0.1cm);
+    \draw[blue] (1.5,0) node[above=0.25cm,right=-0.1cm] {$\phi$} arc
+    (0:\a:1cm); 
+  \end{tikzpicture}
+}
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:

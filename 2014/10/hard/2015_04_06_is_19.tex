@@ -1,0 +1,88 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{Городской центр физического образования, 10 класс.}\\
+  \textit{Серия 19Ш, 6 апреля 2015.}}
+\end{center}
+
+\begin{center}
+  \Large\textbf{ Конденсаторы в цепях. }
+\end{center}
+
+\large
+
+\task{ В схеме, изображённой на рисунке, конденсаторы $C_1$ и $C_2$
+  имеют одинаковую ёмкость $C$. В начальный момент ключи \textbf{K1} и
+  \textbf{K2} разомкнуты, а конденсаторы $C_1$ и $C_2$ заряжены до
+  разности потенциалов $U_1$ и $U_2$ соответственно, причём знаки
+  зарядов, размещающихся на пластинах конденсаторов, показаны на
+  рисунке. Какой заряд пройдёт через сопротивление $R$ при
+  одновременном замыкании ключей? }
+\begin{center}
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (0,-2) {};
+    \draw (1) to[resistor={info={$R_2$}}] ++(right:1.5cm)
+    to[capacitor={info={$C_2$}, info=north west:{$-$},info=north
+      east:{$+$}}] ++(down:1cm)  
+    to[make contact] ++(down:1cm) to[resistor={info={$R_1$}}] (2) to[resistor={info={$R_2$}}]
+    ++(left:1.5cm) to[make contact] ++(up:1cm)
+    to[capacitor={info={$C_1$}, info=north west:{$-$},info=north
+      east:{$+$}}] 
+    ++(up:1cm) to[resistor={info={$R_1$}}] (1);
+    \draw (1) to[resistor={info={$R$}}] (2); 
+  \end{tikzpicture}
+\end{center}
+
+\taskpic[5cm]{ В электрической схеме, изображённой на рисунке, в начальный
+  момент ключ \textbf{K} разомкнут, а конденсатор не
+  заряжен. Параметры схемы указаны на рисунке. Определите начальные
+  токи через ключ и через батарею сразу после замыкания ключа.  }
+{
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (0,-1.5) {};
+    \node[contact] (3) at (0,-3) {};
+    \node[contact] (4) at (1.5,-1.5) {};
+    \draw (1) to [resistor={info={$R$}}] (2)
+    to[capacitor={info={$C$}}] (3); 
+    \draw (2) to[make contact] (4);
+    \draw (1) -- ++(right:1.5cm) to[resistor={info={$2R$}}] (4)
+    to[resistor={info={$3R$}}] ++(down:1.5cm) -- (3);
+    \draw (1) -- (left:1cm) to[battery={info'={$\mathcal{E}, r$}}] ++(down:3cm) -- (3); 
+  \end{tikzpicture}
+}
+
+\task{ В схеме на рисунке ключи \textbf{K1} и \textbf{K2} разомкнуты,
+  а конденсаторы не заряжены. Ключ \textbf{K1} замыкают, оставляя
+  \textbf{K2} разомкнутым. 1) Какие напряжения установятся на
+  конденсаторах? 2) Какой заряд протечёт через ключ \textbf{K2}, если
+  его замкнуть (при замкнутом ключе \textbf{K1})? Параметры схемы
+  указаны на рисунке. }
+\begin{center}
+  \begin{tikzpicture}[circuit ee IEC, thick]
+    \node[contact] (1) at (0,0) {};
+    \node[contact] (2) at (1.5,0) {};
+    \node[contact] (3) at (3,0) {};
+    \node[contact] (4) at (1.5,1.5) {};
+    \draw (1) to[resistor={info'={$R$}}] (2) to[resistor={info'={$2R$}}] (3);
+    \draw (2) to[make contact] (4);
+    \draw (1) to[capacitor={info={$C$}}] (4);
+    \draw (3) to[capacitor={info'={$2C$}}] (4);
+    \draw (1) -- ++(down:1.5cm) to[make contact={info'={\textbf{K1}}}] ++(right:1.5cm)
+    to[battery={info'={$\mathcal{E}, r$}}] ++(right:1.5cm) -- (3); 
+  \end{tikzpicture}
+\end{center}
+
+
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:

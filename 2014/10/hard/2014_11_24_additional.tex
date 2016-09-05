@@ -1,0 +1,98 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{Городской центр физического образования, 10 класс.}\\
+  \textit{ Дополнение для сильных духом, 24 ноября 2014.}}
+\end{center}
+
+\begin{center}
+  \Large\textbf{ Электричество. }
+\end{center}
+
+\large
+
+\task{ Теоретик Баг предложил экспериментатору Глюку определить схему
+  электрического чёрного ящика (ЧЯ) с двумя выводами. В ящике
+  находятся два одинаковых диода и два разных резистора. Вольтамперная
+  характеристика (ВАХ) чёрного ящика приведена на левом рисунке, а ВАХ
+  диода --- на правом. Восстановите схему ЧЯ и определите
+  сопротивление каждого из резисторов. }
+\begin{figure}[h]
+  \centering
+  \subcaptionbox{ВАХ чёрного ящика.}
+    {\begin{tikzpicture}
+      \draw[thick,->] (-0.1,0) -- (4,0) node[above] {$U$, В};
+      \draw[thick,->] (0,-0.1) -- (0,3.5) node[left] {$I$, мА};
+      \foreach \x in {0.5,1,...,3.5} {\draw[thick] (\x,0.1) --
+        ++(0,-0.2);}
+      \foreach \y in {0.3,0.6,...,3.4} {\draw[thick] (0.1,\y) --
+        ++(-0.2,0);}
+      \draw[very thick] (1,0) -- (2.5,1.5) -- (3,3);
+      \draw[dashed,thick] (3,3) |- (0,0);
+      \draw[dashed,thick] (3,3) -| (0,0);
+      \draw[dashed,thick] (2.5,1.5) |- (0,0);
+      \draw[dashed,thick] (2.5,1.5) -| (0,0);
+      \draw (1,0) node[below] {0,5};
+      \draw (2,0) node[below] {1,0}; 
+      \draw (3,0) node[below] {1,5};
+      \draw (0,0.6) node[left] {10};
+      \draw (0,1.2) node[left] {20};
+      \draw (0,1.8) node[left] {30}; 
+      \draw (0,2.4) node[left] {40}; 
+    \end{tikzpicture}}
+    \qquad
+    \subcaptionbox{ВАХ диода.}
+    {\begin{tikzpicture}
+      \draw[thick,->] (-0.1,0) -- (4,0) node[above] {$U$, В};
+      \draw[thick,->] (0,-0.1) -- (0,3.5) node[left] {$I$};
+      \draw[thick] (1.5,0.1) -- ++(0,-0.2) node[below] {0,5};
+      \draw[thick] (3,0.1) -- ++(0,-0.2) node[below] {1,0};
+      \draw[very thick] (1.5,0) -- ++(0,3.5); 
+    \end{tikzpicture}}
+\end{figure}
+% Регион-10, 2014
+
+\task{ Электрическая цепь состоит из батарейки, шести резисторов,
+  значения сопротивлений которых $R_1=1$ кОм, $R_2=2$ кОм, $R_3=3$
+  кОм, $R_4=4$ кОм и трёх одинаковых амперметров, внутреннее
+  сопротивление $r$ которых мало ($r \ll R_1$). Вычислите показания
+  амперметров, если напряжение батарейки $U=3{,}3$ В.  }
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[circuit ee IEC,thick]
+    \node[contact] (12) at (2,2) {}; 
+    \node[contact] (13) at (4,2) {};
+    \node[contact] (21) at (0,0) {};
+    \node[contact] (22) at (2,0) {}; 
+    \node[contact] (23) at (4,0) {}; 
+    \node[contact] (32) at (2,-2) {}; 
+    \node[contact] (33) at (4,-2) {};
+
+    \draw[thick] (21) -- (22) node[midway,circle,draw,fill=white]
+    {$A_2$};  
+    \draw[thick] (22) -- (23) node[midway,circle,draw,fill=white]
+    {$A_1$};  
+    \draw[thick] (21) to[resistor={info={$R_3$}}] ++(0,2) -- (12)
+    to[resistor={info={$R_3$}}] (22) 
+    to[resistor={info={$R_2$}}] (32) -- ++(-2,0)
+    to[resistor={info={$R_1$}}] (21); 
+    \draw[thick] (12) -- (13) to[resistor={info={$R_3$}}] (23)
+    to[resistor={info={$R_4$}}] (33) -- (32); 
+    \draw[thick] (21) -- ++(-1,0) -- ++(0,3) -- ++(6,0)
+    node[midway,circle,draw,fill=white] {$A_3$} -- ++(0,-3) --
+    (23);
+    \draw[draw=white,double=black,double distance=\pgflinewidth,ultra
+    thick] (13) -- ++(2,0) to[battery={info={$U$}}] ++(0,-4) -- (33); 
+  \end{tikzpicture}
+\end{figure}
+\end{document}
+% Регион-10, 2013
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
