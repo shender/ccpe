@@ -1,0 +1,73 @@
+\input{../../input/main}
+
+\begin{document}
+
+\begin{center}
+  \Large{\textbf{11 класс.}\\
+  \textit{26 ноября 2014.}}
+\end{center}
+
+
+\begin{center}
+  \Large \textbf{ Цепи и переходные процессы. }
+\end{center}
+
+\large
+
+\taskpic{ Электрическая цепь состоит из конденсатора ёмкостью $C=125$
+  мкФ, резистора $R$, сопротивление которого неизвестно, источника
+  постоянного тока с ЭДС $\mathcal{E}=70$ В и внутренним сопротивлением
+  $r=R/2$. Вначале конденсатор не заряжен, ток отсутствует. Ключ К
+  замыкают и через некоторое время размыкают. Оказалось, что сразу
+  после размыкания ключа сила тока, текущего через конденсатор, в 2
+  раза больше силы тока, текущего через конденсатор непосредственно
+  перед размыканием ключа. Найдите количество теплоты, которое
+  выделилось в цепи после размыкания ключа К. }
+{
+  \begin{tikzpicture}[circuit ee IEC,thick]
+    \node[contact] (1) at (2,0) {};
+    \node[contact] (2) at (2,2) {};
+    \draw[thick] (1) to[resistor] (2);
+    \draw[thick] (1) -- ++(-1.5,0) to[capacitor] ++(0,2) -- (2);
+    \draw[thick] (2) to[make contact] ++(1.5,0) to[battery] ++(0,-2)
+    -- (1); 
+  \end{tikzpicture}
+}
+% Регион-11, 2014
+
+\task{ Параметры электрической цепи указаны на схеме. Вначале ключ К
+  разомкнут.
+  \begin{enumerate}
+  \item Определите напряжение на конденсаторе ёмкостью $C$. 
+  \item Определите силу тока, который потечёт через резистор
+    сопротивлением $3R$, сразу после замыкания ключа К. 
+  \item Какое напряжение установится на конденсаторе ёмкостью $C$
+    после того, как переходные процессы завершатся? 
+  \end{enumerate}
+}
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[circuit ee IEC,thick]
+    \node[contact] (1) at (2,0) {};
+    \node[contact] (2) at (2,4) {};
+    \draw[thick] (2) to[capacitor={info={$3C$}}] ++(0,-2)
+    to[resistor={info={$3R$}}] (1);
+    \draw[thick] (2) -- ++(2,0) to[capacitor={info={$2C$}}] 
+    ++(0,-1.5) to[resistor={info={$2R$}}]  ++(0,-1.5)
+    to[battery={info={$2\mathcal{E}$}}] ++(0,-1);
+    \draw[thick] (1) to[make contact={info={К}}] ++(2,0);
+    \draw[thick] (2) -- ++(-2,0) to[capacitor={info={$C$}}] 
+    ++(0,-1.5) to[resistor={info={$R$}}]  ++(0,-1.5)
+    to[battery={info={$\mathcal{E}$}}] ++(0,-1) -- (1);
+  \end{tikzpicture}
+\end{figure}
+% Регион-11, 2013
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
