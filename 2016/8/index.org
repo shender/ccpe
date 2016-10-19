@@ -29,7 +29,7 @@
 | НТ-03. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-09-26-nt-03.pdf][Ещё системы отсчёта]]               | Ш-03. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-09-28-is-03.pdf][Завершая кинематику]]                |
 | НТ-04. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-03-nt-04.pdf][Начнём работу]]                     | Ш-04. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-05-is-04.pdf][Плавание тел]]                       |
 | НТ-05. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-10-nt-05.pdf][Продолжим работу]]                  | Ш-05. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-12-is-05.pdf][Ещё плавание тел]]                   |
-| НТ-06. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-17-nt-06.pdf][Бонус]]                             |                                          |
+| НТ-06. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-17-nt-06.pdf][Бонус]]                             | Ш-06. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-19-is-06.pdf][Правило рычага]]                     |
 |------------------------------------------+------------------------------------------|
 
 #+BEGIN_HTML
