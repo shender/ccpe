@@ -30,6 +30,7 @@
 | НТ-04. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-03-nt-04.pdf][Начнём работу]]                     | Ш-04. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-05-is-04.pdf][Плавание тел]]                       |
 | НТ-05. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-10-nt-05.pdf][Продолжим работу]]                  | Ш-05. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-12-is-05.pdf][Ещё плавание тел]]                   |
 | НТ-06. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-17-nt-06.pdf][Бонус]]                             | Ш-06. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-19-is-06.pdf][Правило рычага]]                     |
+| НТ-07. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-24-nt-07.pdf][Задачи на каникулы, v.1]]           | Ш-07. [[http://www.school.ioffe.ru/ccpe/2016-20/8grade/2016-10-26-is-07.pdf][Задачи на каникулы, v.2]]            |
 |------------------------------------------+------------------------------------------|
 
 #+BEGIN_HTML
