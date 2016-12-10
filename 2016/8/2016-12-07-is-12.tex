@@ -1,0 +1,89 @@
+\input{../../main}
+
+\begin{document}
+
+\setphysstyle{ГЦФО 8}{Серия Ш-12}{07.12.2016}
+
+\setcounter{notask}{35}
+
+\Large
+
+\taskpic[5cm]{ Нить, намотанная на большой блок (с осью в точке \textbf{O}
+  и радиуса $R$), проходит через блоки \textbf{C} и \textbf{D} и
+  крепится к пружине в точке \textbf{A}. Второй конец пружины в точке
+  \textbf{B} крепится к диску большого блока. К этой же точке
+  подвешивается груз массы $m$. Известно, что независимо от того, где
+  на горизонтальной прямой \textbf{OE} находится точка \textbf{B},
+  точка \textbf{A} своё положение не меняет. Найти жёсткость пружины
+  $k$. }
+{
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (A) at ($(O)+(0.7,0)$);
+    \coordinate (B) at ($(O)+(-0.8,0)$);
+    \coordinate (C) at (1.7,-1.7);
+    \coordinate (C1) at ($(C)+(0.17,-0.12)$);
+    \coordinate (D) at (2.5,-0.2);
+    \coordinate (E) at (-1.5cm,0); 
+    \draw[very thick] (O) circle (1.5cm);
+    \node[circle, draw, very thick] (c) at (C) [inner sep=0pt, minimum
+    size=0.4cm]{}; 
+    \node[circle, draw, very thick] (d) at (D) [inner sep=0pt, minimum
+    size=0.4cm]{};
+    \draw[thick] (1.5,0) -- ++(0,-1.7);
+    \draw[thick] (C1) -- (tangent cs:node=d,point={(C)});
+    \draw[thick] ($(D)+(0,0.2)$) -- (A) node[above]
+    {\small \textbf{A}};
+    \draw[thick,spring] (A) -- (B) node[above] {\small \textbf{B}};
+    \draw[thick] (B) -- ++(0,-2);
+    \draw[thick] ($(B)+(-0.3,-2)$) rectangle ($(B)+(0.3,-2.6)$)
+    node[midway] {\small $m$};
+    \draw (E) node[left] {\small \textbf{E}};
+    \draw (C) node[below=0.2cm] {\small \textbf{C}};
+    \draw (D) node[above=0.2cm] {\small \textbf{D}}; 
+  \end{tikzpicture}
+}
+% 2007-8-city
+
+\taskpic[5cm]{ Система состоит из подвижных и неподвижных блоков, грузов и
+  лёгкой нерастяжимой нити. Трение в системе отсутствует. Масса
+  крайнего груза $m=10$ кг. Найдите массы остальных грузов, если
+  система находится в равновесии. }
+{
+  \begin{tikzpicture}
+    \draw[thick, interface] (0.8,0.5) -- (5.2,0.5);  
+    \foreach \x in {1,2,3,4,5} {
+      \draw[thick] (\x,0) circle (0.25cm);
+      \draw[thick] (\x+0.25,0) -- ++(0,-2);
+      \draw[thick] (\x-0.25,0) -- ++(0,-2);
+      \draw[thick] (\x,0) -- ++(0,0.5); 
+    }
+    \draw[thick] (0.55,-2) rectangle ++(0.4,-0.4) node[midway] {\small
+      $m$};
+    \draw[thick] (5.05,-2) rectangle ++(0.4,-0.4) node[midway] {\small
+      ?};
+    \foreach \x in {1.5,2.5,3.5,4.5} {
+      \draw[thick] (\x,-2) circle (0.25cm);
+      \draw[thick] (\x,-2) -- ++(0,-1);
+      \draw[thick] (\x-0.2,-3) rectangle ++(0.4,-0.4) node[midway]
+      {\small ?}; 
+      }
+  \end{tikzpicture}
+}
+% 2004-8-city
+
+\task{ В стенке цилиндрического сосуда радиуса $R$, наполненного водой
+  до высоты $h$, возле дна имеется отверстие, закрытое пробкой. Какую
+  работу нужно совершить, чтобы вдвинуть пробку в сосуд на длину $l$?
+  Пробка имеет форму цилиндра радиуса $r$ и длины, большей $l$. Трение
+  не учитывать. Плотность воды равна $\rho_0$. Сосуд достаточно высок,
+  так что вода из него не выливается. }
+% НГУ, 1.149
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
