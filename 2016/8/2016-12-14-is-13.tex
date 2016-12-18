@@ -1,0 +1,72 @@
+\input{../../main}
+
+\begin{document}
+
+\setphysstyle{ГЦФО 8}{Серия Ш-13}{14.12.2016}
+
+\setcounter{notask}{38}
+
+\Large
+
+\task{ В прямоугольный высокий сосуд налита жидкость плотности
+  $\rho$. В одной из стенок у дна сосуда имеется прямоугольное
+  отверстие высоты $h$, в которое вдвинута на расстояние $l$ невесомая
+  пробка того же сечения. При какой высоте уровня жидкости над пробкой
+  жидкость не сможет её вытолкнуть? Коэффициент трения пробки о дно
+  сосуда равен $k$. Атмосферное давление равно $p_0$. Трением пробки о
+  стенки сосуда пренебречь. }
+% НГУ-1, 1.150
+
+\taskpic[6cm]{ Планка массой $m$ и два одинаковых груза массой $2m$ с
+  помощью лёгких нитей прикреплены к двум блокам. Система находится в
+  равновесии. Определите силы натяжения нитей и силы, с которыми
+  подставка действует на грузы. Трения в осях блоков нет. }
+{
+  \begin{tikzpicture}
+    \draw[very thick] (0.5,0.2) -- (0.5,2.5);
+    \draw[very thick] (1,2.5) circle (0.5cm);
+    \draw[very thick] (1.5,2.5) -- (1.5,1);
+    \draw[very thick] (1.3,1) rectangle (1.7,0.2) node[right=0.2cm,midway,blue]
+    {\small $2m$};
+    \draw[very thick] (3,0.2) -- (3,2.5);
+    \draw[very thick] (3.5,2.5) circle (0.5cm);
+    \draw[very thick] (4,2.5) -- (4,1);
+    \draw[very thick] (3.8,1) rectangle (4.2,0.2)
+    node[right=0.2cm,midway,blue] {\small $2m$};
+    \draw[very thick] (1,2.5) -- (1,3.5);
+    \draw[very thick] (3.5,2.5) -- (3.5,3.5);
+    \draw[interface,thick] (0,3.5) -- (5,3.5);
+    \draw[thick] (-0.5,0) rectangle ++(5.5,0.2) node[below=0.2cm,midway,blue]
+    {$m$};
+    \foreach \x in {0,0.5,...,5} { \draw (\x,0) -- (\x,0.2);}; 
+  \end{tikzpicture}
+}
+% Максвелл-2015-8
+
+\taskpic[5cm]{ Четыре одинаковых ледяных бруска длиной $L$ сложены так, как
+  показано на рисунке. Каким может быть максимальное расстояние $d$,
+  при условии, что все бруски расположены горизонтально? Считайте что
+  бруски гладкие (между ними нет трения), и что сила тяжести приложена
+  к центру соответствующего бруска. }
+{
+  \begin{tikzpicture}
+    \draw[thick, interface] (4.5,0) -- (0,0);
+    \draw[thick,fill=gray!70] (1.5,0) rectangle ++(1.5,0.5);
+    \draw[thick,fill=gray!70] (0.5,0.5) rectangle ++(1.5,0.5);
+    \draw[thick,fill=gray!70] (2.5,0.5) rectangle ++(1.5,0.5);
+    \draw[thick,fill=gray!70] (1.5,1) rectangle ++(1.5,0.5);
+    \draw[thick,blue,<->] (1.5,2) -- ++(1.5,0)
+    node[midway,above,blue] {$L$};
+    \draw[thick,blue,<->] (2,0.75) -- ++(0.5,0);
+    \draw[thick,blue,->] (3,-0.5) node[right] {$d$} to[out=180,in=270] (2.25,0.7); 
+  \end{tikzpicture}
+}
+% Максвелл-2013-8
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
