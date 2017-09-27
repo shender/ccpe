@@ -1,0 +1,64 @@
+\input{../../main}
+
+\renewcommand{\libproblempath}{../../../materials/problems_db}
+
+\begin{document}
+
+\setphysstyle{ГЦФО 9}{Серия Ш-02}{27.09.2017}
+\setcounter{notask}{4}
+
+\center{\large \textbf{Ещё раз о системах отсчёта} }
+
+\vspace{0.25cm}
+
+\libproblem{shapiro-bodik}{1.1}
+
+\vspace{0.25cm}
+
+\center{\large \textbf{Кое-что о жёстких стержнях} }
+
+\flushleft
+
+Пусть имеется абсолютно жёсткий стержень, который как-то двигается. В
+частности, двигаются его концы, точки \textbf{A} и
+\textbf{B}. Обозначим их скорости $\vec{v}_A$ и $\vec{v}_B$. 
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[very thick] (0,0) node[below] {\textbf{A}} -- (3,4)
+    node[left] {\textbf{B}};
+    \draw[thick,dashed] (3,4) -- ++(0.6,0.8);
+    \draw[blue,thick,->] (0,0) -- ++(90:1.5cm) node[above] {$v_A$};
+    \draw[red,thick,->] (3,4) -- ++(10:2cm) node[right] {$v_B$};
+    \draw[blue, thick, arcnode={$\alpha$}] (0,0) ++(90:0.75) arc
+    (90:atan2(3,4):0.5cm);
+    \draw[red, thick, arcnode={$\beta$}] (3.3,4.4) arc (atan2(3,4):10:0.75cm);
+  \end{tikzpicture}
+  \caption{Абсолютно жёсткий стержень. }
+  \label{fig:rod}
+\end{figure}
+
+Спроецируем скорости на направление стержня: $v_A \cos \alpha$, $v_B
+\cos \beta$. Так как стержень абсолютно жёсткий, то его длина не может
+меняться, а значит,
+\begin{equation}
+  \label{eq:stiff-rod}
+  v_A \cos \alpha = v_B \cos \beta. 
+\end{equation}
+(в противном случае точка \textbf{B} удалялась бы от точки \textbf{A}
+(или приближалась бы к ней)). Уравнение \eqref{eq:stiff-rod} можно и
+нужно использовать при решении различных задач.
+
+\vspace{0.5cm}
+
+\libproblem{other}{kvant-2012-1-p34}
+\libproblem{original}{palochka01}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
