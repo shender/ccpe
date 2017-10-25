@@ -1,0 +1,90 @@
+\input{../../main}
+
+\renewcommand{\libproblempath}{../../../materials/problems_db}
+
+\begin{document}
+
+\setphysstyle{ГЦФО 9}{Серия Ш-06}{25.10.2017}
+\setcounter{notask}{16}
+
+\parindent=10pt
+
+\begin{center}
+  \large \textbf{Движение без проскальзывания}
+\end{center}
+
+\begin{wrapfigure}{r}{4cm}
+  \begin{tikzpicture}
+    \draw[thick,interface] (4,0) -- (0,0);
+    \draw[thick] (2,1) circle (1cm);
+    \draw[fill=black] (3,1) circle (0.05cm) node[right] {$D$};
+    \draw[fill=black] (1,1) circle (0.05cm) node[left] {$B$};
+    \draw[fill=black] (2,2) circle (0.05cm) node[above] {$C$};
+    \draw[fill=black] (2,0) circle (0.05cm) node[above] {$A$};
+    \draw[blue,thick,->] (2,1) -- ++(0.7,0) node[above,midway] {$v$};
+    \draw[blue,thick,>=stealth,->] (1.5,0.5) arc (225:135:0.7cm)
+    node[right] {$\omega$}; 
+  \end{tikzpicture}
+\end{wrapfigure}
+
+Рассмотрим диск радиуса $r$, катящийся по горизонтальной
+плоскости. Скорость центра диска постоянна и равна $v$. Диск двигается
+без проскальзывания. Каждая точка диска участвует в двух движениях: в
+поступательном движении со скоростью $v$ и во вращательном вокруг
+центра с угловой скоростью $\omega$. Отсутствие
+\textit{проскальзывания} (иначе эту ситуацию называют иногда
+\textit{качением}) говорит нам о том, что точка $A$ диска двигается с
+нулевой скоростью относительно земли. Поэтому получаем
+$v - \omega r =0$, откуда $\omega = v/r$.
+
+Скорость точки $B$ найти чуть сложнее. Линейная скорость за счёт
+вращательного движения равна $\omega r = v$. Она направлена
+вертикально вверх. При этом скорость поступательного движения
+по-прежнему направлена горизонтально (и по модулю тоже равна
+$v$). Получается, что полная скорость равна по модулю $v_B = v\sqrt{2}$ и
+направлена под углом $\pi/4$ к горизонту. 
+
+\begin{wrapfigure}{l}{4cm}
+  \begin{tikzpicture}
+    \draw[thick,interface] (4,0) -- (1,0);
+    \draw[thick] (2,1) circle (1cm);
+    % точка B
+    \draw[thick,->] (1,1) -- ++(0,0.8) node[above,blue] {$\omega r$};
+    \draw[thick,->] (1,1) -- ++(0.8,0) node[above,blue] {$v$};
+    \draw[thick,->] (1,1) -- ++(45:1.12);
+    \draw[fill=black] (1,1) circle (0.05cm) node[left] {$B$};
+    % точка D
+    \draw[thick,->] (3,1) -- ++(0,-0.8) node[right=-0.1cm,blue] {$\omega r$};
+    \draw[thick,->] (3,1) -- ++(0.8,0) node[above,blue] {$v$};
+    \draw[thick,->] (3,1) -- ++(-45:1.128);
+    \draw[fill=black] (3,1) circle (0.05cm) node[left] {$D$};
+  \end{tikzpicture}
+\end{wrapfigure}
+
+В точке $D$ всё почти то же самое: разница лишь в том, что
+вращательная скорость смотрит вертикально вниз. Как следствие,
+суммарная скорость направлена под углом $-\pi/4$ к горизонту. В точке
+$C$ вращательная и поступательная скорость направлены в одну сторону и
+параллельно друг другу, поэтому суммарная скорость будет
+горизонтальна и равна по модулю $2v$. 
+
+Из всего этого следует, что движение диска можно рассматривать как
+вращение относительно оси, проходящей через точку $A$. Такая ось
+называется \textit{мгновенной осью вращения}. 
+
+\vspace{1cm}
+\parindent=0pt
+
+\libproblem{other}{kvant-1972-09-p52}
+
+\libproblem{manida}{180}
+
+\libproblem{moscow(1968-1985)}{1.16}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine:xetex
+%%% TeX-PDF-mode: t
+%%% End:
